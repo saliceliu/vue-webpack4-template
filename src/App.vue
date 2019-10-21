@@ -4,21 +4,29 @@
         <b-row>
         <b-col cols="12">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <router-link to="/" > Home </router-link>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
+            <button class="btn btn-outline-dark" type="button">
+                <router-link to="/" > Home </router-link>
+            </button>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
+                        <button class="btn btn-outline-dark" type="button">
                         <router-link to="/menu" > Menu </router-link>
+                        </button>
                     </li>
                     <li class="nav-item">
+                        <button class="btn btn-outline-dark" type="button">
                         <router-link to="/about" > About </router-link>
+                        </button>
                     </li>
                     <li class="nav-item">
+                        <button class="btn btn-outline-dark" type="button">
                         <router-link to="/contact" > Contact </router-link>
+                        </button>
                     </li>
                 </ul>
             </div>
