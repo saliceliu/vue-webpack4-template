@@ -36,6 +36,12 @@
                     class="card-img-top"
                     :alt="player.birthday"
                   >
+                  <div>
+                    Number: {{ player.backnum }} <br>
+                    Position: {{  player.position}} <br>
+                    Birthday: {{  player.birthday  }} <br>
+                    Current Club: {{  player.current_club}}
+                  </div>
                 </b-modal>
               </div>
             </b-card>
