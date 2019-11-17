@@ -1,16 +1,16 @@
 <template>
   <div class="full-width center-content">
-    <WelcomeMessage name="Menu" />
+    
 
     <div id="app">
       <b-container>
         <b-row>
-          <b-col>
+          <b-col cols="8">
             <b-card
-              v-for="item in menu"
-              :key="item"
-              :title="item.name"
-              :img-src="item.img"
+              v-for="player in players"
+              :key="player"
+              :title="player.name"
+              :img-src="player.img"
 
               img-alt="Image"
               img-top
@@ -19,21 +19,21 @@
               class="mb-2"
             >
               <b-card-text>
-                {{ item.description }}
+                Number {{ player.backnum }}
               </b-card-text>
 
-              <b-button v-b-modal="item.id">
-                Click to see a picture of {{ item.name }}
+              <b-button v-b-modal="player.id">
+                Details of {{ player.name }}
               </b-button>
               <div>
                 <b-modal
-                  :id="item.id"
-                  :title="item.name"
+                  :id="player.id"
+                  :title="player.name"
                 >
                   <img
-                    :src="item.img"
+                    :src="player.img"
                     class="card-img-top"
-                    :alt="item.description"
+                    :alt="player.birthday"
                   >
                 </b-modal>
               </div>
@@ -49,14 +49,14 @@
 export default {
   data: function () {
     return {
-      menu: []
+      players: []
     }
   },
   created: function () {
-    fetch('https://api.myjson.com/bins/vknvn')
+    fetch('https://api.myjson.com/bins/140f4a')
       .then(response => response.json())
       .then(json => {
-        this.menu = json.items
+        this.players = json.players
       })
   }
 }
