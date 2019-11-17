@@ -5,8 +5,9 @@
     <div id="app">
       <b-container>
         <b-row>
-          <b-col cols="8">
-            <b-card
+          <b-col>
+          <b-card-group deck>
+            <b-card 
               v-for="player in players"
               :key="player"
               :title="player.name"
@@ -15,7 +16,7 @@
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem;"
+              style="min-width: 20rem; max-width: 20rem;"
               class="mb-2"
             >
               <b-card-text>
@@ -38,6 +39,7 @@
                 </b-modal>
               </div>
             </b-card>
+            </b-card-group deck>
           </b-col>
         </b-row>
       </b-container>
