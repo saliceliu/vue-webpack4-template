@@ -19,34 +19,33 @@
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
           >
-            <b-carousel-slide img-src="https://bit.ly/2X9fzJ0"></b-carousel-slide>
+            <b-carousel-slide img-src="https://bit.ly/2X9fzJ0" />
 
-            <b-carousel-slide img-src="https://bit.ly/3733ARS"></b-carousel-slide>
+            <b-carousel-slide img-src="https://bit.ly/3733ARS" />
 
-            <b-carousel-slide img-src="https://bit.ly/2CDDsPk"></b-carousel-slide>
+            <b-carousel-slide img-src="https://bit.ly/2CDDsPk" />
           </b-carousel>
         </b-col>
       </b-row>
     </b-container>
-
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        slide: 0,
-        sliding: null
-      }
+export default {
+  data () {
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
+  methods: {
+    onSlideStart (slide) {
+      this.sliding = true
     },
-    methods: {
-      onSlideStart(slide) {
-        this.sliding = true
-      },
-      onSlideEnd(slide) {
-        this.sliding = false
-      }
+    onSlideEnd (slide) {
+      this.sliding = false
     }
   }
+}
 </script>
