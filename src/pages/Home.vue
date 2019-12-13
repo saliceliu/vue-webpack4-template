@@ -41,7 +41,12 @@
 </template>
 
 <script>
+import Form from 'components/Form'
+
 export default {
+  components: {
+    Form;
+  },
   data () {
     return {
       slide: 0,
@@ -55,6 +60,14 @@ export default {
     onSlideEnd (slide) {
       this.sliding = false
     }
+  },
+  create: function () {
+      created: function () {
+        this.$axios.get('/products')
+            .then(response => {
+                this.products = response.data.data
+            })
+      }
   }
 }
 </script>
