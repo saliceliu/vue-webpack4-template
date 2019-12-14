@@ -45,7 +45,7 @@ import Form from 'components/Form'
 
 export default {
   components: {
-    Form;
+    Form
   },
   data () {
     return {
