@@ -13,20 +13,11 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                product: {
-                    name: 'Ben'
-                }
-            }
-        }
-    },
+
     methods: {
         onSubmit() {
-            this.$axios.post('/products', this.product).then(response => {
-                alert(response.data.data.message)
-            })
+            this.$axios.post('/products', this.product).then(response => {alert(response.data.data.message)})
         }
     }
+
 </script>

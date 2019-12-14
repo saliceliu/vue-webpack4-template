@@ -29,6 +29,7 @@
       </b-row>
     </b-container>
     <div>
+      <br>
       <h4>Thank you for visiting-- <span v-if="user">{{ user.name }}</span> </h4>
       <b-list-group>
         <b-list-group-item>Your Information</b-list-group-item>
@@ -41,12 +42,7 @@
 </template>
 
 <script>
-import Form from 'components/Form'
-
 export default {
-  components: {
-    Form
-  },
   data () {
     return {
       slide: 0,
@@ -62,12 +58,10 @@ export default {
     }
   },
   create: function () {
-      created: function () {
-        this.$axios.get('/products')
-            .then(response => {
-                this.products = response.data.data
-            })
-      }
+    this.$axios.get('/products')
+      .then(response => {
+        this.products = response.data.data
+      })
   }
 }
 </script>

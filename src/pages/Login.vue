@@ -52,15 +52,26 @@ export default {
         .then(response => response.json())
         .then(json => {
           this.users = json.users
+          this.$axios.post(
+            '/users'
+          ).then(
+            response => {
+              alert(response.data.data.message)
+              this.$parent.refresh()
+            }
+          )
         })
         .then(() => {
           let email = this.form.email
           let password = this.form.password
-          sessionStorage.user = JSON.stringify(this.users.find(function (user) {
-            return ((user.email === email) && (user.password === password))
-          }))
+          if (this.users.email === email && this.users.password === password) {
+            sessionStorage.setItem(
+              'email',
+              email
+            )
+            this.$router.push('/')
+          }
           console.log(sessionStorage.user)
-          this.$router.push('/')
         })
     }
   }
